@@ -13,27 +13,26 @@
 
 Route::auth();
 
-Route::group(['middleware' => ['UMU']],function(){ //利用者サイド
-    Route::get('/que', 'User\QuestionController@index');
-    Route::post('/que/confirm', 'User\ConfrimController@confirm');
-    Route::post('/que/confirm/complete', 'User\CompleteController@complete');
+Route::get('/',function(){
+    return view('welcome');
 });
 
-Route::group(['middleware' => ['Admin']],function(){ //管理者サイド
-    Route::get('/admin','Admin\AdminController@index');
-    Route::get('/result','Admin\AdminController@result');
-    Route::post('/result','Admin\AdminController@csv');
-    Route::get('/csv','Admin\AdminController@csv');
-    Route::get('/idpass',function(){
+Route::group(['middleware' => ['UMU']],function(){//-----------------------------------利用者サイド-------------------------
+    Route::get('/que', 'User\QuestionController@index');                             //アンケート回答画面
+    Route::post('/que/confirm', 'User\ConfirmController@confirm');                   //アンケート回答確認画面
+    Route::post('/que/confirm/complete', 'User\CompleteController@complete');        //アンケート回答完了画面
+});
+
+Route::group(['middleware' => ['Admin']],function(){//---------------------------------利用者サイド-------------------------
+    Route::get('/admin',function(){ return view('admin.admin'); });                  //管理者トップ画面表示
+    Route::get('/result','Admin\ResultController@result');                           //管理者結果確認画面
+    Route::post('/result','Admin\ResultController@csv');                             //管理者結果CSV出力
+    Route::get('/idpass',function(){                                                 //IDパスワード発行メニュー画面
         return view('admin.idpass');
     });
-    Route::get('/idpass/user',function(){
-        return view('admin.iduser');
-    });
-    Route::get('/idpass/admin',function(){
-        return view('admin.idadmin');
-    });
-    Route::post('/idpass/user','Admin\AdminController@user');
-    Route::post('/idpass/admin','Admin\AdminController@admin');
+    Route::get('/idpass/user', 'Admin\UserIssueController@index');                   //利用者用IDパスワード発行画面
+    Route::post('/idpass/user','Admin\UserIssueController@user');
+    Route::get('/idpass/admin','Admin\AdminIssueController@index');                  //管理者用IDパスワード発行画面
+    Route::post('/idpass/admin','Admin\AdminIssueController@admin');
 });
 
