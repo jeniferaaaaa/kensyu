@@ -20,10 +20,10 @@ Route::group(['middleware' => ['UMU']],function(){ //利用者サイド
 });
 
 Route::group(['middleware' => ['Admin']],function(){ //管理者サイド
-    Route::get('/admin','AdminController@index');
-    Route::get('/result','AdminController@result');
-    Route::post('/result','AdminController@csv');
-    Route::get('/csv','AdminController@csv');
+    Route::get('/admin','Admin\AdminController@index');
+    Route::get('/result','Admin\AdminController@result');
+    Route::post('/result','Admin\AdminController@csv');
+    Route::get('/csv','Admin\AdminController@csv');
     Route::get('/idpass',function(){
         return view('admin.idpass');
     });
@@ -33,7 +33,7 @@ Route::group(['middleware' => ['Admin']],function(){ //管理者サイド
     Route::get('/idpass/admin',function(){
         return view('admin.idadmin');
     });
-    Route::post('/idpass/user','AdminController@user');
-    Route::post('/idpass/admin','AdminController@admin');
+    Route::post('/idpass/user','Admin\AdminController@user');
+    Route::post('/idpass/admin','Admin\AdminController@admin');
 });
 
