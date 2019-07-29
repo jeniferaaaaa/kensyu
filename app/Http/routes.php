@@ -10,19 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::auth();
 
-Route::group(['middleware' => ['UMU']],function(){
-    Route::get('/que', 'QueController@index');
-    Route::post('/que/confirm', 'QueController@confirm');
-    Route::post('/que/confirm/complete', 'QueController@complete');
+Route::group(['middleware' => ['UMU']],function(){ //利用者サイド
+    Route::get('/que', 'User\QuestionController@index');
+    Route::post('/que/confirm', 'User\ConfrimController@confirm');
+    Route::post('/que/confirm/complete', 'User\CompleteController@complete');
 });
 
-Route::group(['middleware' => ['Admin']],function(){
+Route::group(['middleware' => ['Admin']],function(){ //管理者サイド
     Route::get('/admin','AdminController@index');
     Route::get('/result','AdminController@result');
     Route::post('/result','AdminController@csv');

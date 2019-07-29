@@ -9,7 +9,7 @@ use Auth;
 use App\Ques;
 use App\User;
 
-class QueController extends Controller
+class ConfirmController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,31 +22,13 @@ class QueController extends Controller
     }
     
     /**
-     * Show the application dashboard.
+     * バリデーションを通過後、値をセッションへ保存
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //ログインユーザ取得
-        $id = Auth::user()->id;
-        
-        //回答フラグ存在チェック
-        $flag = DB::table('ques')->select('flag')
-                                 ->where('user_id','=',$id)
-                                 ->exists();//true or false
-
-        //回答フラグによって切り替え
-        if ($flag == true){
-            return view('use.error');
-        }else{
-            return view('use.que');
-        }
-    }
-
     public function confirm(Request $request)
     {
-        //バリデーション実装
+        //バリデーション実装（別ファイルに書き込みたい）
         $this->validate($request, [
             'q1' => 'required',
             'q2' => 'required',
@@ -141,70 +123,19 @@ class QueController extends Controller
             'free2' => 'Q7-2',
         ]);
 
-        //for文でリクエスト情報を変数へ格納
+        //for文でリクエスト情報を変数へ格納、セッションへ保存
         for ($i = 1; $i <= 26; $i++){
             $data['q'.$i] = $request->input('q'.$i);
-        }
-        $data['free1'] = $request->input('free1');
-        $data['free2'] = $request->input('free2');
-
-        //for文でセッションへリクエスト情報を保存
-        for ($i = 1; $i <= 26; $i++){
             $request->session()->put('q'.$i,$data['q'.$i]);
         }
+
+        //以下フリー入力欄
+        $data['free1'] = $request->input('free1');
+        $data['free2'] = $request->input('free2');
         $request->session()->put('free1',$data['free1']);
         $request->session()->put('free2',$data['free2']);
 
         return view('use.confirm',$data);
-    }
-
-    public function complete(Request $request)
-    {
-        //for文でセッション情報を変数へ格納
-        for ($i = 1; $i <= 26; $i++){
-            ${'q'.$i} = $request->session()->get('q'.$i);
-        }
-        $free1 = $request->session()->get('free1');
-        $free2 = $request->session()->get('free2');
-
-        //ログイン中のユーザの情報を取得
-        $user_id = Auth::user()->id;
-
-        //モデルインスタンスを利用するやり方
-        Ques::create([
-            'user_id' => $user_id,
-            'flag' => 1,
-            'q1' => $q1,
-            'q2' => $q2,
-            'q3' => $q3,
-            'q4' => $q4,
-            'q5' => $q5,
-            'q6' => $q6,
-            'q7' => $q7,
-            'q8' => $q8,
-            'q9' => $q9,
-            'q10' => $q10,
-            'q11' => $q11,
-            'q12' => $q12,
-            'q13' => $q13,
-            'q14' => $q14,
-            'q15' => $q15,
-            'q16' => $q16,
-            'q17' => $q17,
-            'q18' => $q18,
-            'q19' => $q19,
-            'q20' => $q20,
-            'q21' => $q21,
-            'q22' => $q22,
-            'q23' => $q23,
-            'q24' => $q24,
-            'q25' => $q25,
-            'q26' => $q26,
-            'free1' => $free1,
-            'free2' => $free2,
-        ]);
-
-        return view('use.complete');
     }
 
 }
