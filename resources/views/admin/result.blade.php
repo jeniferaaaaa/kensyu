@@ -21,10 +21,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.事業推進統括部：{{$qq1}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.サービス管理統括部：{{$qq2}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.DX第一統括部：{{$qq3}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.DX第二統括部：{{$qq4}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.事業推進統括部：{{$q1[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.サービス管理統括部：{{$q1[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.DX第一統括部：{{$q1[3]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.DX第二統括部：{{$q1[4]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -32,10 +32,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.20代：{{$qq5}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.30代：{{$qq6}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.40代以上：{{$qq7}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.人間じゃない：{{$qq8}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.20代：{{$q2[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.30代：{{$q2[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.40代以上：{{$q2[3]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.人間じゃない：{{$q2[4]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -43,12 +43,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.等級1：{{$qq9}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.等級2：{{$qq10}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.等級3：{{$qq11}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.等級4：{{$qq12}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">5.等級5：{{$qq13}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">6.年棒：{{$qq14}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.等級1：{{$q3[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.等級2：{{$q3[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.等級3：{{$q3[3]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.等級4：{{$q3[4]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">5.等級5：{{$q3[5]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">6.年棒：{{$q3[6]}}%</label>
                         </div>
 
 
@@ -57,10 +57,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.一般：{{$qq15}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.リーダ：{{$qq16}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.マネージャ：{{$qq17}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.管理職以上：{{$qq18}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.一般：{{$q4[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.リーダ：{{$q4[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.マネージャ：{{$q4[3]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.管理職以上：{{$q4[4]}}%</label>
                         </div>
 
 
@@ -73,8 +73,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy1}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn1}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q5[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q5[2]}}%</label>
                         </div>
 
 
@@ -83,8 +83,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy2}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn2}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q6[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q6[2]}}%</label>
                         </div>
 
 
@@ -93,8 +93,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy3}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn3}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q7[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q7[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -102,8 +102,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy4}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn4}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q8[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q8[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -115,8 +115,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy5}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn5}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q9[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q9[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -124,8 +124,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy6}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn6}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q10[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q10[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -133,8 +133,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy7}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn7}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q11[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q11[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -142,8 +142,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy8}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn8}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q12[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q12[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -155,8 +155,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy9}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn9}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q13[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q13[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -164,8 +164,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy10}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn10}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q14[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q14[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -173,8 +173,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy11}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn11}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q15[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q15[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -182,8 +182,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy12}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn12}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q16[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q16[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -195,8 +195,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy13}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn13}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q17[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q17[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -204,8 +204,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy14}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn14}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q18[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q18[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -213,8 +213,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy15}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn15}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q19[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q19[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -222,8 +222,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy16}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn16}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q20[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q20[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -231,8 +231,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy17}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn17}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q21[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q21[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -244,8 +244,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy18}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn18}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q22[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q22[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -253,8 +253,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy19}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn19}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q23[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q23[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -262,8 +262,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy20}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn20}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q24[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q24[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -271,8 +271,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy21}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn21}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q25[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q25[2]}}%</label>
                         </div>
 
                         <div class="form-group row">
@@ -280,8 +280,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$qy22}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$qn22}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q26[1]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q26[2]}}%</label>
                         </div>
 
                         <form method="POST" action="{{url('/result')}}">{{ csrf_field() }}
