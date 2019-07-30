@@ -23,4 +23,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * ユーザに関連する回答レコードを取得
+     */
+    public function ques()
+    {
+        return $this->hasOne('App\Ques');
+    }
 }

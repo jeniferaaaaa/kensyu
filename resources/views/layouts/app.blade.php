@@ -63,6 +63,11 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                            @if ( Auth::user()->flag == 1)
+                                <li><a href="{{ url('/admin') }}"><i class="fa fa-btn fa-sign-out"></i>管理画面</a></li>
+                                <li><a href="{{ url('/result') }}"><i class="fa fa-btn fa-sign-out"></i>アンケート結果表示</a></li>
+                                <li><a href="{{ url('/idpass') }}"><i class="fa fa-btn fa-sign-out"></i>ID・パスワード発行画面</a></li>
+                            @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>ログアウト</a></li>
                             </ul>
                         </li>

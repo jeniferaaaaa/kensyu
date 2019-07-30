@@ -34,4 +34,12 @@ class Ques extends Model
         'free1','free2',
     ];
 
+    /**
+     * この回答を所有するユーザを取得
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'foreign_key');
+    }
+
 }

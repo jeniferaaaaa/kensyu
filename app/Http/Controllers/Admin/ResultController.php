@@ -25,10 +25,12 @@ class ResultController extends Controller
 
     public function result()
     {
-        //回答がないときの処理も記載
-
         //回答総数算出
         $ques = DB::table('ques')->count();
+        //回答がない場合、エラー画面に遷移
+        if($ques == ''){
+            return view('admin.error');
+        }
 
         //所属部署-----------------------------------------------
         $q1_1 = DB::table('ques')->where('q1','=','1')->count();
