@@ -27,7 +27,7 @@ Route::group(['middleware' => ['UMU']],function(){//----------------------------
     Route::post('/que/confirm/complete', 'User\CompleteController@complete');        //アンケート回答完了画面
 });
 
-Route::group(['middleware' => ['Admin']],function(){//---------------------------------利用者サイド-------------------------
+Route::group(['middleware' => ['Admin']],function(){//---------------------------------管理者サイド-------------------------
     Route::get('/admin',function(){ return view('admin.admin'); });                  //管理者トップ画面表示
     Route::get('/result','Admin\ResultController@result');                           //管理者結果確認画面
     Route::post('/result','Admin\CsvController@csv');                                //管理者結果CSV出力

@@ -28,6 +28,20 @@
                     </div>
                     @endif
 
+                    @if (session('error'))
+  　　　　　　　　　　<p class="text-danger mt-3">
+    　　　　　　　　　　　　　{{ session('error') }}
+  　　　　　　　　　　</p>
+　　　　　　　　　　　@endif
+
+                    @if (session('success'))
+  　　　　　　　　　　<div class="form-group row">
+                        <span class="help-block">
+    　　　　　　　　　　　　　<strong class="text-success">{{ session('success') }}</strong>
+                        </span>
+  　　　　　　　　　　</div>
+　　　　　　　　　　　@endif
+
 
                     <div class="form-group row">
                         <div class="col-md-6">

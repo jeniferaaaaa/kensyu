@@ -28,7 +28,7 @@ class AdminIssueController extends Controller
         return view ('admin.idadmin');
     }
 
-    public function user(Request $request)
+    public function admin(Request $request)
     {
         //アップロードファイルの判定チェック
         $validator = Validator::make($request->all(), [
@@ -48,41 +48,52 @@ class AdminIssueController extends Controller
                         ->withInput();
         }
 
-        //CSV読み込み処理
-        $file = $request->file('csv_file');//リクエストからファイルを受信→変数へ
-        $r_file = fopen($file,'r');
-        $count = 0 ;//ループカウントボックス
+        try {
 
-        //CSVをループで取得し、配列に格納
-        while(($data = fgetcsv($r_file, 1000, ",")) !== FALSE){
+            //CSV読み込み処理
+            $file = $request->file('csv_file');//リクエストからファイルを受信→変数へ
+            $r_file = fopen($file,'r');
+            //読み込みに失敗した場合、例外を投げる
+            if ($r_file == FALSE){
+                throw new Exception('ファイルの読み込みに失敗しました！');
+            }
+            $count = 0 ;//ループカウントボックス
 
-            //ID・パスワードランダム生成
-            $id[] = substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),0,10);
-            $pass[] = substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_'),0,8);
-            $getName[] = $data[0];//メール送信用の名前を入れる配列
-            $getData[] = $data[1];//メールアドレスを入れる配列
-            $count = $count + 1;
+            //CSVをループで取得し、配列に格納
+            while(($data = fgetcsv($r_file, 1000, ",")) !== FALSE){
 
-        }
-        fclose($r_file);
+                //ID・パスワードランダム生成
+                $id[] = substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),0,10);
+                $pass[] = substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_'),0,8);
+                $getName[] = $data[0];//メール送信用の名前を入れる配列
+                $getData[] = $data[1];//メールアドレスを入れる配列
+                $count = $count + 1;
 
-        //上記ループが終わった後、DB登録とメール送信をカウントボックス分ループ処理
-        for ($i = 0;$i < $count;$i++){
-            //モデルインスタンスを作成してDB登録
-            User::create([
-                 'name' => $id[$i], 
-                 'email' => $getData[$i], 
-                 'password' => bcrypt($pass[$i]),
-                 'flag' => 1,//管理者なので1
-            ]);
+            }
+            fclose($r_file);
+
+            //上記ループが終わった後、DB登録とメール送信をカウントボックス分ループ処理
+            for ($i = 0;$i < $count;$i++){
+                //モデルインスタンスを作成してDB登録
+                User::create([
+                    'name' => $id[$i], 
+                    'email' => $getData[$i], 
+                    'password' => bcrypt($pass[$i]),
+                    'flag' => 1,//管理者なので1
+                ]);
             
-            //メール送信
-            Mail::send('emails.mail', compact('id','pass','file','getName','i'), function ($message) use($getData,$i) {
-                $message->from('kami@example.com', '神');
+                //メール送信
+                Mail::send('emails.mail', compact('id','pass','file','getName','i'), function ($message) use($getData,$i) {
+                    $message->from('kami@example.com', '神');
             
-                $message->to($getData[$i])->subject('じぇにふぁアンケートシステムアカウント発行のお知らせ');
-            });
+                    $message->to($getData[$i])->subject('じぇにふぁアンケートシステムアカウント発行のお知らせ');
+                });
             
+            }
+
+        }catch( Exception $e ){
+            //エラーが発生した場合、処理中断
+            return redirect('idpass/user')->with('error', 'エラーが発生しました');
         }
 
         return view('admin.idadmin');
