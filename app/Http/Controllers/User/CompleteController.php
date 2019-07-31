@@ -38,7 +38,7 @@ class CompleteController extends Controller
         //ログイン中のユーザの情報を取得
         $user_id = Auth::user()->id;
 
-        //モデルインスタンスを利用するやり方(のちにモデル側に何か書いてスマートに書きたい)
+        //モデルインスタンスを利用するやり方
         Ques::create([
             'user_id' => $user_id,
             'flag' => 1,

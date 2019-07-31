@@ -131,34 +131,4 @@ class ResultController extends Controller
                                             'q17','q18','q19','q20','q21','q22','q23','q24','q25','q26'));
     }
 
-    /**
-     *  アンケートの集計結果をCSVでダウンロードさせるメソッド
-     * 
-     */
-
-    public function csv()
-    {
-        //とってきた値をラベルに変換する処理を入れる        
-        $data = $this->columns();
-
-        //数値⇒ラベルへ変換処理
-        
-        //csvのヘッダー作成
-        $head = array('Q1-1','Q1-2','Q1-3','Q1-4','Q2-1','Q2-2','Q2-3','Q2-4','Q3-1','Q3-2',
-                      'Q3-3','Q3-4','Q4-1','Q4-2','Q4-3','Q4-4','Q5-1','Q5-2','Q5-3','Q5-4',
-                      'Q5-5','Q6-1','Q6-2','Q6-3','Q6-4','Q6-5','Q7-1','Q7-2');
-
-        //ループでcsvを作成
-        $file = fopen('test.csv','w');
-        //ヘッダーを先に書き込み
-        fputcsv($file,$head);
-        //ループでまわしてデータを書き込み
-        foreach($data as $val){
-            fputcsv($file,$val);
-        }
-        fclose($file);
-
-        return response()->download('test.csv');
-    }
-
 }

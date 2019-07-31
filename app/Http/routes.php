@@ -16,6 +16,10 @@ Route::auth();
 Route::get('/',function(){
     return view('welcome');
 });
+//Vue.js試験版
+Route::get('/test',function(){
+    return view('test');
+});
 
 Route::group(['middleware' => ['UMU']],function(){//-----------------------------------利用者サイド-------------------------
     Route::get('/que', 'User\QuestionController@index');                             //アンケート回答画面
@@ -26,7 +30,7 @@ Route::group(['middleware' => ['UMU']],function(){//----------------------------
 Route::group(['middleware' => ['Admin']],function(){//---------------------------------利用者サイド-------------------------
     Route::get('/admin',function(){ return view('admin.admin'); });                  //管理者トップ画面表示
     Route::get('/result','Admin\ResultController@result');                           //管理者結果確認画面
-    Route::post('/result','Admin\ResultController@csv');                             //管理者結果CSV出力
+    Route::post('/result','Admin\CsvController@csv');                                //管理者結果CSV出力
     Route::get('/idpass',function(){                                                 //IDパスワード発行メニュー画面
         return view('admin.idpass');
     });
