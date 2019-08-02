@@ -21,10 +21,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.事業推進統括部：{{$q1[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.サービス管理統括部：{{$q1[2]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.DX第一統括部：{{$q1[3]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.DX第二統括部：{{$q1[4]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.事業推進統括部：@if(isset($q1[1])){{$q1[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.サービス管理統括部：@if(isset($q1[2])){{$q1[2]}} @else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.DX第一統括部：@if(isset($q1[3])){{$q1[3]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.DX第二統括部：@if(isset( $q1[4])){{$q1[4]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -32,10 +32,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.20代：{{$q2[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.30代：{{$q2[2]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.40代以上：{{$q2[3]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.人間じゃない：{{$q2[4]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.20代：@if(isset($q2[1])){{$q2[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.30代：@if(isset($q2[2])){{$q2[2]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.40代以上：@if(isset($q2[3])){{$q2[3]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.人間じゃない：@if(isset($q2[1])){{$q2[1]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -43,12 +43,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.等級1：{{$q3[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.等級2：{{$q3[2]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.等級3：{{$q3[3]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.等級4：{{$q3[4]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">5.等級5：{{$q3[5]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">6.年棒：{{$q3[6]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.等級1：@if(isset($q3[1])){{$q3[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.等級2：@if(isset($q3[2])){{$q3[2]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.等級3：@if(isset($q3[3])){{$q3[3]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.等級4：@if(isset($q3[4])){{$q3[4]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">5.等級5：@if(isset($q3[5])){{$q3[5]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">6.年棒：@if(isset($q3[6])){{$q3[6]}}@else 0 @endif %</label>
                         </div>
 
 
@@ -57,10 +57,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.一般：{{$q4[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.リーダ：{{$q4[2]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">3.マネージャ：{{$q4[3]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.管理職以上：{{$q4[4]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.一般：@if(isset($q4[1])){{$q4[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.リーダ：@if(isset($q4[2])){{$q4[2]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">3.マネージャ：@if(isset($q4[3])){{$q4[3]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.管理職以上：@if(isset($q4[4])){{$q4[4]}}@else 0 @endif %</label>
                         </div>
 
 
@@ -73,8 +73,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q5[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q5[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q5[1])){{$q5[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q5[2])){{$q5[2]}}@else 0 @endif %</label>
                         </div>
 
 
@@ -83,8 +83,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q6[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q6[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q6[1])){{$q6[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q6[2])){{$q6[2]}}@else 0 @endif %</label>
                         </div>
 
 
@@ -93,8 +93,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q7[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q7[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q7[1])){{$q7[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q7[2])){{$q7[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -102,8 +102,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q8[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q8[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q8[1])){{$q8[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q8[2])){{$q8[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -115,8 +115,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q9[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q9[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q9[1])){{$q9[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q9[2])){{$q9[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -124,8 +124,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q10[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q10[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q10[1])){{$q10[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q10[2])){{$q10[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -133,8 +133,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q11[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q11[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q11[1])){{$q11[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q11[2])){{$q11[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -142,8 +142,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q12[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q12[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q12[1])){{$q12[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q12[2])){{$q12[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -155,8 +155,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q13[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q13[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q13[1])){{$q13[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q13[2])){{$q13[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -164,8 +164,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q14[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q14[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q14[1])){{$q14[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q14[2])){{$q14[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -173,8 +173,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q15[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q15[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q15[1])){{$q15[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q15[2])){{$q15[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -182,8 +182,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q16[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q16[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q16[1])){{$q16[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q16[2])){{$q16[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -195,8 +195,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q17[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q17[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">@if(isset($q17[1])){{$q17[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">@if(isset($q17[2])){{$q17[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -204,8 +204,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q18[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q18[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">@if(isset($q18[1])){{$q18[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q18[2])){{$q18[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -213,8 +213,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q19[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q19[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q19[1])){{$q19[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q19[2])){{$q19[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -222,8 +222,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q20[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q20[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q20[1])){{$q20[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q20[2])){{$q20[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -231,8 +231,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q21[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q21[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q21[1])){{$q21[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q21[2])){{$q21[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -244,8 +244,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q22[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q22[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q22[1])){{$q22[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q22[2])){{$q22[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -253,8 +253,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q23[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q23[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q23[1])){{$q23[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q23[2])){{$q23[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -262,8 +262,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q24[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q24[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q24[1])){{$q24[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q24[2])){{$q24[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -271,8 +271,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q25[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q25[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q25[1])){{$q25[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q25[2])){{$q25[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">
@@ -280,8 +280,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：{{$q26[1]}}%</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：{{$q26[2]}}%</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q26[1])){{$q26[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q26[2])){{$q26[2]}}@else 0 @endif %</label>
                         </div>
 
                         <form method="POST" action="{{url('/result')}}">{{ csrf_field() }}
