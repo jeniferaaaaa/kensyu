@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
+use App\Http\Requests\CsvValidateRequest;
 use Illuminate\Http\Request;
 use App\Ques;
 use App\User;
@@ -29,26 +29,8 @@ class UserIssueController extends Controller
         return view ('admin.iduser');
     }
 
-    public function user(Request $request)
+    public function user(CsvValidateRequest $request)
     {
-        //アップロードファイルの判定チェック
-        $validator = Validator::make($request->all(), [
-            'csv_file' => 'required|file|mimetypes:text/plain|mimes:csv,txt',//ファイルであるかどうか、拡張子csvかどうか
-        ],[
-            'csv_file.required' => ':attributeを選択してください。',
-            'csv_file.file' => ':attributeの形式が間違っています。',
-            'csv_file.mimes' => ':attributeはcsvではありません。',
-        ],[
-            'csv_file' => 'アップロードファイル',
-        ]);
-
-        //間違っていたら処理を止めてエラー表示
-        if ($validator->fails()) {
-            return redirect('idpass/user')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
-
         //CSV読み込み処理
         $file = $request->file('csv_file');//リクエストからファイルを受信→変数へ
         

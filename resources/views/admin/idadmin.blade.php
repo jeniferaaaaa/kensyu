@@ -20,6 +20,28 @@
                         </div>
                     </div>
 
+                    @if ($errors->has('csv_file'))
+                    <div class="form-group has-error">
+                        <span class="help-block">
+                            <strong>{{ $errors->first('csv_file') }}</strong>
+                        </span>
+                    </div>
+                    @endif
+
+                    @if (session('error'))
+  　　　　　　　　　　<p class="text-danger mt-3">
+    　　　　　　　　　　　　　{{ session('error') }}
+  　　　　　　　　　　</p>
+　　　　　　　　　　　@endif
+
+                    @if (session('success'))
+  　　　　　　　　　　<div class="form-group row">
+                        <span class="help-block">
+    　　　　　　　　　　　　　<strong class="text-success">{{ session('success') }}</strong>
+                        </span>
+  　　　　　　　　　　</div>
+　　　　　　　　　　　@endif
+
                     <div class="form-group row">
                         <div class="col-md-6">
                             <a type="button" href="{{ url('/idpass') }}" class="btn btn-primary">戻る</a>
