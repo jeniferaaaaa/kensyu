@@ -195,8 +195,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">@if(isset($q17[1])){{$q17[1]}}@else 0 @endif %</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">@if(isset($q17[2])){{$q17[2]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">1.はい：@if(isset($q17[1])){{$q17[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">2.いいえ：@if(isset($q17[2])){{$q17[2]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">

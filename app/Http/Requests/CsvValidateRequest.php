@@ -17,7 +17,7 @@ class CsvValidateRequest extends Request
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * CSVのバリデーション
      *
      * @return array
      */
