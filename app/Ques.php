@@ -20,7 +20,6 @@ class Ques extends Model
      * @var string
      */
     const UPDATED_AT = null;
-    const CREATED_AT = null;
 
 
     /**

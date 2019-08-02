@@ -33,8 +33,7 @@ class QuestionController extends Controller
         $id = Auth::user()->id;
         
         //回答フラグ存在チェック
-        $flag = DB::table('ques')->select('flag')
-                                 ->where('user_id','=',$id)
+        $flag = DB::table('ques')->where('user_id','=',$id)
                                  ->exists();//true or false
 
         //回答フラグによって切り替え

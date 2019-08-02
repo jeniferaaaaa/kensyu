@@ -41,7 +41,6 @@ class CompleteController extends Controller
         //モデルインスタンスを利用するやり方
         Ques::create([
             'user_id' => $user_id,
-            'flag' => 1,
             'q1' => $q1,
             'q2' => $q2,
             'q3' => $q3,

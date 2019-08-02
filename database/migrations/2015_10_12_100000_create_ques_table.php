@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatequesTable extends Migration
+class CreateQuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,6 @@ class CreatequesTable extends Migration
         Schema::create('ques', function (Blueprint $table) {
             $table->increments('que_id');
             $table->tinyInteger('user_id');
-            $table->tinyInteger('flag');
             $table->tinyInteger('q1');
             $table->tinyInteger('q2');
             $table->tinyInteger('q3');
@@ -44,6 +43,7 @@ class CreatequesTable extends Migration
             $table->tinyInteger('q26');
             $table->string('free1');
             $table->string('free2');
+            $table->timestamp('created_at');
 
         });
     }
