@@ -31,9 +31,7 @@ Route::group(['middleware' => ['Admin']],function(){//--------------------------
     Route::get('/admin',function(){ return view('admin.admin'); });                  //管理者トップ画面表示
     Route::get('/result','Admin\ResultController@result');                           //管理者結果確認画面
     Route::post('/result','Admin\CsvController@csv');                                //管理者結果CSV出力
-    Route::get('/idpass',function(){                                                 //IDパスワード発行メニュー画面
-        return view('admin.idpass');
-    });
+    Route::get('/idpass',function(){ return view('admin.idpass'); });                //IDパスワード発行メニュー画面
     Route::get('/idpass/user', 'Admin\UserIssueController@index');                   //利用者用IDパスワード発行画面
     Route::post('/idpass/user','Admin\UserIssueController@user');
     Route::get('/idpass/admin','Admin\AdminIssueController@index');                  //管理者用IDパスワード発行画面

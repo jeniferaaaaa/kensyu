@@ -36,6 +36,7 @@ class AdminIssueController extends Controller
         ],[
             'csv_file.required' => ':attributeを選択してください。',
             'csv_file.file' => ':attributeの形式が間違っています。',
+            'csv_file.mimetypes' => ':attributeはcsvではありません',
             'csv_file.mimes' => ':attributeはcsvではありません。',
         ],[
             'csv_file' => 'アップロードファイル',
@@ -48,10 +49,9 @@ class AdminIssueController extends Controller
                         ->withInput();
         }
 
+        //CSV読み込み処理
+        $file = $request->file('csv_file');//リクエストからファイルを受信→変数へ
         try {
-
-            //CSV読み込み処理
-            $file = $request->file('csv_file');//リクエストからファイルを受信→変数へ
             $r_file = fopen($file,'r');
             //読み込みに失敗した場合、例外を投げる
             if ($r_file == FALSE){
@@ -71,6 +71,17 @@ class AdminIssueController extends Controller
 
             }
             fclose($r_file);
+
+            //DB二重登録防止処理
+            for ($i = 0;$i < $count;$i++){
+                $boo = DB::table('users')->where('email','=', $getData[$i])
+                                         ->exists();
+                //既に登録がある場合例外を投げる
+                if ($boo == TRUE){
+                    throw new \Exception('CSVファイルの'.$i.'行目が既にDBに登録されています！');
+                    return exit;
+                }
+            }
 
             //上記ループが終わった後、DB登録とメール送信をカウントボックス分ループ処理
             for ($i = 0;$i < $count;$i++){
@@ -93,9 +104,7 @@ class AdminIssueController extends Controller
 
         }catch( Exception $e ){
             //エラーが発生した場合、処理中断
-            return redirect('idpass/user')->with('error', 'エラーが発生しました');
+            return redirect('idpass/admin')->with('error', 'エラーが発生しました');
         }
-
-        return view('admin.idadmin');
     }
 }

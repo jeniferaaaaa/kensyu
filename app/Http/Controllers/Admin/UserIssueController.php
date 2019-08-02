@@ -10,6 +10,7 @@ use DB;
 use Auth;
 use Mail;
 use Validator;
+use App\Exceptions;;
 
 class UserIssueController extends Controller
 {
@@ -48,13 +49,14 @@ class UserIssueController extends Controller
                         ->withInput();
         }
 
+        //CSV読み込み処理
+        $file = $request->file('csv_file');//リクエストからファイルを受信→変数へ
+        
         try{
-            //CSV読み込み処理
-            $file = $request->file('csv_file');//リクエストからファイルを受信→変数へ
             $r_file = fopen($file,'r');
             //読み込みに失敗した場合、例外を投げる
             if ($r_file == FALSE){
-                throw new Exception('ファイルの読み込みに失敗しました！');
+                throw new \Exception('ファイルの読み込みに失敗しました！');
             }
             $count = 0 ;//ループカウントボックス
 
@@ -71,7 +73,18 @@ class UserIssueController extends Controller
             }
             fclose($r_file);
 
-            //上記ループが終わった後、DB登録とメール送信をカウントボックス分ループ処理
+            //DB二重登録防止処理
+            for ($i = 0;$i < $count;$i++){
+                $boo = DB::table('users')->where('email','=', $getData[$i])
+                                         ->exists();
+                //既に登録がある場合例外を投げる
+                if ($boo){
+                    throw new \Exception('CSVファイルの'.$i.'行目が既にDBに登録されています！');
+                    return exit;
+                }
+            }
+
+            //DB登録とメール送信をカウントボックス分ループ処理
             for ($i = 0;$i < $count;$i++){
                 //モデルインスタンスを作成してDB登録
                 User::create([
@@ -92,12 +105,10 @@ class UserIssueController extends Controller
 
             return redirect('idpass/user')->with('success','登録が完了しました！');
 
-        }catch( Exception $e){
+        }catch( \Exception $e){
             //エラーが発生した場合、処理中断
-            return redirect('idpass/user')->with('error', $e);
+            return redirect('idpass/user')->with('error', $e->getMessage());
 
         }
-
-        return view('admin.iduser');
     }
 }
