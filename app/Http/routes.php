@@ -17,9 +17,7 @@ Route::get('/',function(){
     return view('welcome');
 });
 //Vue.js試験版
-Route::get('/test',function(){
-    return view('test');
-});
+Route::get('/test','TestController@test');
 
 Route::group(['middleware' => ['UMU']],function(){//-----------------------------------利用者サイド-------------------------
     Route::get('/que', 'User\QuestionController@index');                             //アンケート回答画面

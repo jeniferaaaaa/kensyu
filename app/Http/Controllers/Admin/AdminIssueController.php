@@ -36,7 +36,7 @@ class AdminIssueController extends Controller
             $r_file = fopen($file,'r');
             //読み込みに失敗した場合、例外を投げる
             if ($r_file == FALSE){
-                throw new Exception('ファイルの読み込みに失敗しました！');
+                throw new \Exception('ファイルの読み込みに失敗しました！');
             }
             $count = 0 ;//ループカウントボックス
 

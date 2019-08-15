@@ -35,7 +35,7 @@
                             <label for="text" class="col-md-4 col-form-label text-md-right">1.20代：@if(isset($q2[1])){{$q2[1]}}@else 0 @endif %</label>
                             <label for="text" class="col-md-4 col-form-label text-md-right">2.30代：@if(isset($q2[2])){{$q2[2]}}@else 0 @endif %</label>
                             <label for="text" class="col-md-4 col-form-label text-md-right">3.40代以上：@if(isset($q2[3])){{$q2[3]}}@else 0 @endif %</label>
-                            <label for="text" class="col-md-4 col-form-label text-md-right">4.人間じゃない：@if(isset($q2[1])){{$q2[1]}}@else 0 @endif %</label>
+                            <label for="text" class="col-md-4 col-form-label text-md-right">4.人間じゃない：@if(isset($q2[4])){{$q2[4]}}@else 0 @endif %</label>
                         </div>
 
                         <div class="form-group row">

@@ -57,8 +57,7 @@ class UserIssueController extends Controller
 
             //DB二重登録防止処理
             for ($i = 0;$i < $count;$i++){
-                $boo = DB::table('users')->where('email','=', $getData[$i])
-                                         ->exists();
+                $boo = DB::table('users')->where('email','=', $getData[$i])->exists();
                 //既に登録がある場合例外を投げる
                 if ($boo){
                     throw new \Exception('CSVファイルの'.$i.'行目が既にDBに登録されています！');
