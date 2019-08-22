@@ -27,7 +27,7 @@ Route::group(['middleware' => ['UMU']],function(){//----------------------------
 
 Route::group(['middleware' => ['Admin']],function(){//---------------------------------管理者サイド-------------------------
     Route::get('/admin',function(){ return view('admin.admin'); });                  //管理者トップ画面表示
-    Route::get('/result','Admin\ResultController@result');                           //管理者結果確認画面
+    Route::get('/result','Admin\ResultController@result');                           //管理者結果確認画面いい
     Route::post('/result','Admin\CsvController@csv');                                //管理者結果CSV出力
     Route::get('/idpass',function(){ return view('admin.idpass'); });                //IDパスワード発行メニュー画面
     Route::get('/idpass/user', 'Admin\UserIssueController@index');                   //利用者用IDパスワード発行画面
