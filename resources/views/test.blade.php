@@ -27,7 +27,7 @@
         <li v-else-if="isActive === '2'">{{$test2}}</li>
         <li v-else-if="isActive === '3'">{{$test3}}</li>
         <li v-else-if="isActive === '4'">{{$test2}}</li>
-        <li v-else-if="isActive === '5'">{{$test5}}</li>
+        <li v-else-if="isActive === '5'">{{$test3}}</li>
       </ul>
     </div>
 
