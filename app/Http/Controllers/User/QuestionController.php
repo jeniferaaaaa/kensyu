@@ -36,9 +36,8 @@ class QuestionController extends Controller
         //回答フラグによって切り替え
         if ($user->ques->exists){
             return view('use.error');
-        }else{
-            return view('use.que');
         }
+        return view('use.que');
     }
 
 }
