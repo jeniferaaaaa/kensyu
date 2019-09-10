@@ -30,18 +30,14 @@ class QuestionController extends Controller
     public function index()
     {
         //ログインユーザ取得
-        $id = Auth::user()->id;
-        
-        //回答フラグ存在チェック
-        $flag = DB::table('ques')->where('user_id','=',$id)
-                                 ->exists();//true or false
+        $user = Auth::user();
 
+        //回答フラグ存在チェック
         //回答フラグによって切り替え
-        if ($flag == true){
+        if ($user->ques->exists){
             return view('use.error');
-        }else{
-            return view('use.que');
         }
+        return view('use.que');
     }
 
 }
