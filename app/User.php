@@ -27,8 +27,9 @@ class User extends Authenticatable
     /**
      * ユーザに関連する回答レコードを取得
      */
-    public function ques()
+    public function que()
     {
         return $this->hasOne('App\Ques');
     }
+
 }

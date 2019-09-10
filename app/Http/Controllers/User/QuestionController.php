@@ -29,12 +29,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //ログインユーザ取得
-        $user = Auth::user();
-
-        //回答フラグ存在チェック
-        //回答フラグによって切り替え
-        if ($user->ques->exists){
+        //ログインユーザに紐づく回答情報の有無によって切り替え
+        if (Auth::user()->que){
             return view('use.error');
         }
         return view('use.que');
