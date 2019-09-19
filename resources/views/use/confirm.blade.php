@@ -16,6 +16,7 @@
                             <label for="text" class="col-md-4 col-form-label text-md-right">■基本情報</label>
                         </div>
 
+                        {{-- TODO: 質問内容は定義ファイルなどに外だしした方がベター --}}
                         <div class="form-group row">
                             <label for="text" class="col-md-4 col-form-label text-md-right">Q1-1.所属部署は？</label>
                             @if ($q1 == 1)

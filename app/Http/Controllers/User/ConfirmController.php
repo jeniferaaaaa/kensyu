@@ -28,6 +28,7 @@ class ConfirmController extends Controller
      */
     public function confirm(CreateQuesRequest $request)
     {
+        // TODO: 26ってなに？マジックナンバー. 質問数変わったらどうする.
         //for文でリクエスト情報を変数へ格納、セッションへ保存
         for ($i = 1; $i <= 26; $i++){
             $data['q'.$i] = $request->input('q'.$i);
@@ -39,6 +40,8 @@ class ConfirmController extends Controller
         $data['free2'] = $request->input('free2');
         $request->session()->put('free1',$data['free1']);
         $request->session()->put('free2',$data['free2']);
+
+        // TODO: $dataをまとめて一度にセッションに保存できないか. 可能な場合その方がいいか検討
 
         return view('use.confirm',$data);
     }

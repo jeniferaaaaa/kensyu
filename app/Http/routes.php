@@ -19,6 +19,7 @@ Route::get('/',function(){
 //Vue.js試験版
 Route::get('/test','TestController@test');
 
+// TODO: Controller内で指定しているauthのmiddlewareも、ここで、まとめてやればいいのは？
 Route::group(['middleware' => ['UMU']],function(){//-----------------------------------利用者サイド-------------------------
     Route::get('/que', 'User\QuestionController@index');                             //アンケート回答画面
     Route::post('/que/confirm', 'User\ConfirmController@confirm');                   //アンケート回答確認画面

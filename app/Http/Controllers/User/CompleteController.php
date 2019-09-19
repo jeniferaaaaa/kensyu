@@ -29,6 +29,7 @@ class CompleteController extends Controller
     public function complete(Request $request)
     {
         //for文でセッション情報を取り出し変数へ格納
+        // TODO: マジックナンバー26
         for ($i = 1; $i <= 26; $i++){
             ${'q'.$i} = $request->session()->get('q'.$i);
         }
@@ -38,7 +39,11 @@ class CompleteController extends Controller
         //ログイン中のユーザの情報を取得
         $user_id = Auth::user()->id;
 
+        // TODO: バリデーションチェック. 
+        // TODO: レコード追加失敗したときの例外系はどうなる？
+
         //モデルインスタンスを利用するやり方
+        // TODO: 冗長なので、スマートなやり方検討. formのname属性とカラム名が同一の前提を作りたい
         Ques::create([
             'user_id' => $user_id,
             'q1' => $q1,

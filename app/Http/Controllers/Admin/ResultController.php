@@ -30,9 +30,12 @@ class ResultController extends Controller
      */
     private function columns()
     {
+        // TODO: モデルがあるのに使わないのはなんで？
+        // TODO: 質問数変わったときに対処できない
         $stdArray = DB::table('ques')->select('q1','q2','q3','q4','q5','q6','q7','q8','q9','q10',
                                           'q11','q12','q13','q14','q15','q16','q17','q18','q19','q20',
                                           'q21','q22','q23','q24','q25','q26','free1','free2')->get();
+        // TODO: encodeしたあとにdecodeしているのはなぜ？
         $data = json_decode(json_encode($stdArray), true);
 
         return $data;
@@ -64,14 +67,17 @@ class ResultController extends Controller
         $ques = DB::table('ques')->count();
 
         //回答がない場合、エラー画面に遷移
+        // TODO: 空文字を直接比較するのではなくで, issetとか使いましょう. しかも、ゆるい一致なのでバグを生み出すかなと
         if($ques == ''){
             return view('admin.error');
         }
 
+        // TODO: 回答総数算出を別でDBにアクセスしたの無駄と思う
         //カラム情報取得
         $data = $this->columns();
 
         //カラム情報をリスト化⇒中身の数を数える
+        // TODO: ここもperメソッドのなかで実施すればよかったのでは・・・
         $qq1 = array_count_values(array_column($data,'q1'));
         $qq2 = array_count_values(array_column($data,'q2'));
         $qq3 = array_count_values(array_column($data,'q3'));
@@ -99,6 +105,8 @@ class ResultController extends Controller
         $qq25 = array_count_values(array_column($data,'q25'));
         $qq26 = array_count_values(array_column($data,'q26'));
 
+        // TODO: 集計はDB側でやったほうがベターなので検討
+        // TODO: $quesは$qq1の長さをcountすればいいのでは？
         //中身をパーセンテージ化
         $q1 = $this->per($qq1,$ques);
         $q2 = $this->per($qq2,$ques);
@@ -127,6 +135,7 @@ class ResultController extends Controller
         $q25 = $this->per($qq25,$ques);
         $q26 = $this->per($qq26,$ques);
 
+        // TODO: viewにわたす変数多すぎるので、まとめる
         return view ('admin.result',compact('ques','q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13','q14','q15','q16',
                                             'q17','q18','q19','q20','q21','q22','q23','q24','q25','q26'));
     }
