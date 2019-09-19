@@ -13,6 +13,7 @@
                     </div>
 
                     <div class="form-group row">
+                        {{-- TODO: aタグにtype属性指定することは少ない気が。。。するとしてもMIMEタイプなので、text/htmlでは？ --}}
                         <a type="text" href="{{ url('/result') }}" class="col-md-4 col-form-label text-md-right">アンケート結果表示</label>
                     </div>
 

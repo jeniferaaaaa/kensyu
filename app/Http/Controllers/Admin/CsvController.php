@@ -11,6 +11,7 @@ use Auth;
 use Mail;
 use Validator;
 
+// TODO: ResultControllerではなくCsvControllerでは？
 class ResultController extends Controller
 {
     /**
@@ -100,6 +101,10 @@ class ResultController extends Controller
                       'Q3-3','Q3-4','Q4-1','Q4-2','Q4-3','Q4-4','Q5-1','Q5-2','Q5-3','Q5-4',
                       'Q5-5','Q6-1','Q6-2','Q6-3','Q6-4','Q6-5','Q7-1','Q7-2');
 
+        // TODO: 例外系用検討
+        // TODO: 複数人が同時に実行したらどうなる？
+        // TODO: test.csvはどこのディレクトリに作られれる？公開ディレクトリではない？
+        // TODO: test.csvは残したままになる？
         //ループでcsvを作成
         $file = fopen('test.csv','w');
         //ヘッダーを先に書き込み
@@ -110,6 +115,7 @@ class ResultController extends Controller
         }
         fclose($file);
 
+        // TODO: HTTPヘッダーのContent-typeとか指定した方がいい
         return response()->download('test.csv');
     }
 
@@ -121,6 +127,7 @@ class ResultController extends Controller
 
     private function replace_Q1 ($value)
     {
+        // TODO: 質問情報をControllerに持つのはよろしくないかと
         //置換用配列
         $before = array(1,2,3,4);
         $after = array('事業推進統括部','サービス管理統括部','DX第一統括部','DX第二統括部');
